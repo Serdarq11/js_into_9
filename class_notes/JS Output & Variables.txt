@@ -1,0 +1,123 @@
+
+
+windows : alt + shift + down arrow -> duplicates the line
+
+source code -> console.log("hello world");
+node.js -> is the Runtime environment ( where execution happens)
+output -> hello world
+
+Visual Studio Code is a code editor that is commonly used for JS codes
+Intellij IDEA: This mostly for Java and Kotlin
+
+These code editors are known as IDE ( ıntegrated Development Environment)
+
+Runtime error : These are the errors you will see only when you run the code.
+
+compiler: checks if the source code has any syntax error
+execution: running the code
+
+Statement: Each line of code.
+Convention: Each statement is followed by a semi-colon (;). Unwritten rules but good to follow.
+
+- When we duplicate the lines and add one more word to bot of the lines we can click "alt" button
+ and then click the lines which we duplicated below. 
+ 1.Duplicate lines
+ 2.Edit
+ 3. Press ESC.
+
+ [] : square brackets
+ {} : curly braces 
+ ; : semi-colon
+ : : colon
+ () : parantheses
+ . : period
+ , : comma 
+ / : forward slash
+ \ : backward slash
+ | : pipe or OR 
+ || : OR 
+ & : AND 
+ && : AND 
+ =
+ +
+ - : dash, minus, hyphen 
+ * : asterisk, star 
+ / : division 
+ _ : under score
+ % : modulus or remainder 
+ % : percentage
+ <
+ >
+ >=
+ <=
+ ++
+ --
+ ^ : carat      2^3=8 (root)
+ $ :  dollar sign 
+ ! : exclamation, NOT 
+ @
+ # 
+
+ES6 Feature - ES(2015)
+backticks : string templates : string literals
+
+Convention : We always one statement per line.
+
+ESCAPE SEQUENCES
+
+• \' Represents a single quote.
+• \" Represents a double quote.
+• \\ Represents a backslash.
+• \n Represents a new line.
+• \t Represents a tab.
+
+Variables: Speacial containers that stores data in any programming language.
+30-40 keyword in a programming language.
+var-let-const: They are used to create variablesthat stores a piece of data such as text, number or collection.
+
+Data Types
+string: text data type
+    name, address, phone number, ssn (000-00-000), 
+
+Strings are stored in quotes (single or double)
+
+let name = 'John';
+let city = "Chicago";
+
+number: whole(absolute) number and floating numbers (decimal points).
+
+    1, 5, 3000, 55
+    10.99, 3.5
+
+let price = 10.99;
+let age; 27;
+
+NAMING Variables
+Syntax
+-You cannot have space.
+-You cannot start with digits but use anywhereelse.
+- You cannot use any special characters but _, $ and all the other currency signs 
+and you can use these even as the first character.
+-You cannot use any reserved keyword.
+var let const class static
+
+-You cannot use a variable name twice.
+
+Convention:
+    -We start with lowercase
+    -We follow camel-case rule --> bankAccountNumber
+    -We should always give meaningful names to our variables.
+
+let city = 'USA';
+let country = 'Chicago';   These are not meaningful.
+
+
+let age;                                  // true
+let AGE;                                  // true but not recommended
+let shift$;                               // true
+let number of students;                   // false
+let _firstLetter;                         // true
+let 8students;                            // false
+let isWheatherSnowing#;                   // false
+let @balance;                             // false
+

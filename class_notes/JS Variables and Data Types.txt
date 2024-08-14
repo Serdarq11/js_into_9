@@ -1,0 +1,38 @@
+const name, age;                 // false, because const cannot be declared. It has to be initialized.
+let n1 = 45, n2;                 // true
+const num1 = 45, num2;           // false
+let x, let y;                    // false, because if we use these in the same line, we should use just one let.
+let a; let b;                    // true but not recommended
+let i1; i2;                      // syntax is okay but will get a runtime error.
+
+
+DATA TYPES
+Primitive Data Types: smallest and simpliest type of data
+-string
+-number
+-bigint
+-boolean
+-null
+-undefined
+-symbol
+
+Reference Data Types : thousands built-in 
+-These are more complex compared to primitives
+-Arrays, functions, objects, collections, date, time...
+
+let name;            // undefined
+let name = null;     // absence of data
+
+let middle hicran = 'Zeynep';
+let middleJohn = null;
+
+
+boolean
+true or false or any expression that result in true or false
+3 == 3                                    -> true
+'abc' == 'abc'                            -> true
+'Abc' == 'ABC'                            -> false
+3 < 5                                     -> true
+5 >= 5                                    -> true
+2 * 2 == 4 && 'abc' != 'abc'              -> false
+2 * 2 == 4 || 'abc' != 'abc'              -> true
