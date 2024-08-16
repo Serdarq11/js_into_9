@@ -25,3 +25,4 @@ console.log(numbers.lastIndexOf(5) !== -1 && numbers.lastIndexOf(7) !== -1);
 
 // search for 10 after the index of 4 (4 is included)
 console.log(numbers.includes(10, 3)); // false
+
