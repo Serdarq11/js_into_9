@@ -1,6 +1,8 @@
 const names = [ 'alex', 'Adam', 'Jane', 'John', 'alexander'];
 
-// Adam, Jane, John, alex, alexander
+/* Adam, Jane, John, alex, alexander
+uppercase letters come first in ASCII.
+*/
 
 console.log(names.sort());
 
@@ -20,5 +22,6 @@ console.log(numbers); // [ 1, 100, 2, 22, 5 ]
 const nums = [ 5, 2, 22, 1, 100 ];
 
 nums.sort((a, b) => a - b);
+// nums.sort((a, b) => b - a);  descending
 
 console.log(nums); // [ 1, 2, 5, 22, 100 ] ascending
