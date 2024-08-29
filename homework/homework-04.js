@@ -81,7 +81,7 @@ The square of 7 is =  49
 */
 
 for (let i = 0; i <= 7; i++) {
-    console.log(i * i);
+    console.log(`The square of ${i} is = ${i * i}`);
 }
 
 /*
@@ -146,13 +146,6 @@ Eventually, print the random number divisible by 5 with the number of attempts a
 
 Expected Output:The random number is {randomNumber} and it took {attempts} attempt/s to generate it.
 */
-
-let ran2 = generateRandomNumber(1, 100);
-
-for (let i = 1; i <= ran2; i++) {
-    console.log(i);
-    if (i % 5 === 0) break;
-}
 
 
 /*
@@ -364,7 +357,7 @@ let arr2 = [ 9, 3, 67, 1, 0 ];
 console.log("1st array is =", arr1);
 console.log("2nd array is =", arr2);
 
-arr3 = [];
+let arr3 = [];
 
 for (let i = 0; i <= arr1.length - 1; i++) {
     arr3.push(Math.max(arr1[i], arr2[i]));
@@ -390,10 +383,21 @@ firstDuplicate([ 1, 2, 3])			-> -1
 firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) 	-> -1
 */
 
+function firstDuplicate(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j]) return arr[i];
+        }
+    } 
+    return -1;
+}
 
-
-
-
+console.log(firstDuplicate([ 3, 7, 10, 0, 3, 10 ]));
+console.log(firstDuplicate([ 5, 7, 7, 0, 5, 10 ]));
+console.log(firstDuplicate([ 5, '5', 3, 7, 4 ]));
+console.log(firstDuplicate([ 123, 'abc', '123', 3, 'abc' ]));
+console.log(firstDuplicate([ 1, 2, 3]));
+console.log(firstDuplicate([ 'foo', 'abc', '123', 'bar']));
 /*
 TASK 16
 
@@ -411,15 +415,31 @@ getDuplicates(['A', 'foo', '12’ , 12, 'bar', 'a', 'a', 'foo' ])	-> [ 'foo', 'a
 getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ])		-> [ ]
 */
 
+function getDuplicates(arr) {
+    let newArr = [];
 
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j] && !newArr.includes(arr[i])) newArr.push(arr[i]);
+        }
+    } 
+    return newArr;
+}
+
+console.log(getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ]));
+console.log(getDuplicates([ 1, 2, 5, 0, 7 ]));
+console.log(getDuplicates(['A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ]));
+console.log(getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ]));
 
 /*
 TASK 17
 
 Requirement:
-Write a function named as reverseStringWords() which takes a string as an argument and returns string back with each word separately reversed when invoked.
+Write a function named as reverseStringWords() which takes a string as an argument 
+and returns string back with each word separately reversed when invoked.
 
-NOTE: Make your code dynamic that works for any string. Make sure you consider extra spaces before and after words in the given string.
+NOTE: Make your code dynamic that works for any string. Make sure you consider 
+extra spaces before and after words in the given string.
 
 Examples:
 reverseStringWords("Hello World") 		-> "olleH dlroW"
@@ -429,14 +449,30 @@ reverseStringWords("") 			-> ""
 reverseStringWords("    ") 		-> ""
 */
 
+function reverseStringWords(str) {
+    let strAsArray = str.trim().split(' ');
+    
+    for (let i = 0; i < strAsArray.length; i++) {
+        strAsArray[i] = strAsArray[i].split('').reverse().join('');
+    }
+    return strAsArray.join(' ');
+}
 
+console.log(reverseStringWords("Hello World"));
+console.log(reverseStringWords("I like JavaScript"));
+console.log(reverseStringWords("Hello"));
+console.log(reverseStringWords(""));
+console.log(reverseStringWords("    "));
 
 /*
 TASK 18
 
 Requirement:
-Write a function named as getEvens() which takes 2 number arguments and returns all the even numbers as an array stored from smallest even number to greatest even number when invoked.
-NOTE: Make your code dynamic that works for any numbers and return empty array if there are no even numbers in the range of given 2 numbers. 
+Write a function named as getEvens() which takes 2 number arguments and returns 
+all the even numbers as an array stored from smallest even number to greatest even number when invoked.
+
+NOTE: Make your code dynamic that works for any numbers and return empty array 
+if there are no even numbers in the range of given 2 numbers. 
 Assume you will not be given negative numbers.
 
 Examples:
@@ -446,14 +482,30 @@ getEvens(4, 4)	-> [ 4 ]
 getEvens(3, 3)	-> [ ]
 */
 
+function getEvens(num1, num2) {
+    let arr = [];
 
+    for (let i = Math.min(num1, num2); i <= Math.max(num1, num2); i++) {
+        if (i % 2 === 0) arr.push(i); 
+    }
+    return arr;
+}
+
+console.log(getEvens(2, 7));
+console.log(getEvens(17, 5));
+console.log(getEvens(4, 4));
+console.log(getEvens(3, 3));
 
 /*
 TASK 19
 
 Requirement:
-Write a function named as getMultipleOf5() which takes 2 number arguments and returns all the numbers divisible by 5 as an array stored from first found match to last found match when invoked.
-NOTE: Make your code dynamic that works for any numbers and return empty array if there are no numbers divisible by 5 in the range of given 2 numbers. 
+Write a function named as getMultipleOf5() which takes 2 number arguments 
+and returns all the numbers divisible by 5 as an array stored from first 
+found match to last found match when invoked.
+
+NOTE: Make your code dynamic that works for any numbers and return empty array 
+if there are no numbers divisible by 5 in the range of given 2 numbers. 
 Assume you will not be given negative numbers.
 
 Examples:
@@ -463,18 +515,38 @@ getMultipleOf5(5, 5)	-> [ 5 ]
 getMultipleOf5(2, 4)	-> [ ]
 */
 
+function getMultipleOf5(num1, num2) {
+    let arr = [];
+    if (num1 <= num2) {
+    for (let i = Math.min(num1, num2); i <= Math.max(num1, num2); i++) {
+        if (i % 5 === 0) arr.push(i); 
+    }
+    } else {
+    for (let i = Math.max(num1, num2); i >= Math.min(num1, num2); i--) {
+        if (i % 5 === 0) arr.push(i); 
+    }
+    }
+    return arr;
+}
 
+console.log(getMultipleOf5(3, 17));
+console.log(getMultipleOf5(23, 5));
+console.log(getMultipleOf5(5, 5));
+console.log(getMultipleOf5(2, 4));
 
 /*
 TASK 20
 
 Requirement:
-Write a function named as fizzBuzz() which takes 2 number arguments and returns a string composed with below requirements when invoked.
-You need to find all the numbers within the range of given 2 numbers (both inclusive) and store them in a string from smallest to greatest number with a ' | ' separator for each number.
+Write a function named as fizzBuzz() which takes 2 number arguments and 
+returns a string composed with below requirements when invoked.
+You need to find all the numbers within the range of given 2 numbers (both inclusive) 
+and store them in a string from smallest to greatest number with a ' | ' separator for each number.
 You will need to convert numbers divisible by 3 to 'Fizz'
 You will need to convert numbers divisible by 5 to 'Buzz'
 You will need to convert numbers divisible by both 3 and 5 to 'FizzBuzz’
 The rest will stay the same.
+
 NOTE: Make your code dynamic that works for any numbers.
 Assume you will not be given negative numbers.
 
@@ -484,3 +556,20 @@ fizzBuzz(12, 5)	-> "Buzz | Fizz | 7 | 8 | Fizz | Buzz | 11 | Fizz"
 fizzBuzz(5, 5)	-> "Buzz"
 fizzBuzz(9, 6)	-> "Fizz | 7 | 8 | Fizz"
 */
+
+function fizzBuzz(num1, num2) {
+    let str = ""; 
+
+    for (let i = Math.min(num1, num2); i <= Math.max(num1, num2); i++) {
+        if (i % 15 === 0) str += 'FizzBuzz | ';
+        else if (i % 5 === 0) str += 'Buzz | ';
+        else if (i % 3 === 0) str += 'Fizz | ';
+        else str += i + " | ";
+    }
+    return str.slice(0, -3);
+}
+
+console.log(fizzBuzz(13, 18));
+console.log(fizzBuzz(12, 5));
+console.log(fizzBuzz(5, 5));
+console.log(fizzBuzz(9, 6));
