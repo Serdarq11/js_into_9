@@ -363,11 +363,11 @@ findClosestTo10([10, -13, 8, 12, 15, -20]) 	-> 8
 findClosestTo10([0, -1, -2]) 		-> 0
 */
 
-function fincClosestTo10(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i])
-    }
-}
+// function fincClosestTo10(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i])
+//     }
+// }
 
 /*
 TASK 14
