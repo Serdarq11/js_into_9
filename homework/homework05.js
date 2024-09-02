@@ -323,8 +323,19 @@ add([-5, 6, -3, 11], [5, -6, 3, -11]) 		-> [0, 0, 0, 0]
 */
 
 const add = (arr1, arr2) => {
-    
+    const arr3 = [];
+    const longSizedArray = arr1.length > arr2.length ? arr1 : arr2;
+    const shortSizedArray = arr1.length < arr2.length ? arr1 : arr2;
+
+    for (let i = 0; i < shortSizedArray.length; i++) {
+        arr3.push(arr1[i] + arr2[i]);
+    }
+    return arr3.concat(longSizedArray.slice(shortSizedArray.length));
 }
+
+console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2]));
+console.log(add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]));
+console.log(add([-5, 6, -3, 11], [5, -6, 3, -11]));
 
 /*
 TASK 12
@@ -342,7 +353,8 @@ removeExtraSpaces("") 			-> ""
 
 function removeExtraSpaces(str) {
     let countSpaces = 0;
-    return str.trim().split('    ').join();
+    let countWords = 0;
+    return str.trim().split(' ').length;
 }
 
 console.log(removeExtraSpaces("      Hello    World     "));

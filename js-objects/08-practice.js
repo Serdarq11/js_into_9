@@ -98,13 +98,13 @@ const books = [
 
 // Count the books where Author first name has an 'a' -> 2
 
-let countA = 0;
+let countA1 = 0;
 
 for (let i = 0; i < books.length; i++) {
-    if (books[i].author.fname.toUpperCase().includes('A')) countA++;
+    if (books[i].author.fname.toUpperCase().includes('A')) countA1++;
 }
 
-console.log(countA);
+console.log(countA1);
 
 // for of solution
 

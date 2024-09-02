@@ -18,7 +18,7 @@ for (const key of Object.keys(car)) {
 }
 
 /*
-olor
+color
 year
 make
 model
