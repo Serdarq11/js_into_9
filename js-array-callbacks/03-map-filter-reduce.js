@@ -23,3 +23,7 @@ const evenOrOdd = numbers.map(number => number % 2 === 0 ? 'even' : 'odd');
 console.log(evenOrOdd);
 
 console.log(numbers.reduce((sum, curr) => sum + curr), 0);
+
+setTimeout(() => {
+    console.log('Good Morning');
+}, 5000);
