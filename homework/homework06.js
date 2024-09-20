@@ -279,9 +279,24 @@ isDateFormatValid("10/2/2020") 		-> false
 isDateFormatValid("10/02/2020 ") 		-> true
 */
 
-const isDateFormatValid = (str) => {
-    if (!str.includes('/')) return false;
-    else if (str.slice(0, str.indexOf('/')).length === 2 && str.slice(0, str.indexOf('/')) <= 12 && str.slice(3, str.LastIndexOf('/')).length === 2 && str.slice(str.LastIndexOf('/') === 4)) return true;
+const isDateFormatValid = (date) => {
+    const dateAsArray = date.split('/');
+
+    if (dateAsArray.length !== 3) return false;
+
+    const month = date.split('/')[0];
+    const day = date.split('/')[1];
+    const year = date.split('/')[2];
+
+    if (month.length !== 2 || day.length !== 2 || year.length !== 4) return false;
+
+    if (Number(month) < 1 || Number(month) > 12) return false;
+
+    if (Number(day) < 1 || Number(day) > 31) return false;
+
+    if (Number(year) < 1) return false;
+
+    return true;
 }
 
 console.log(isDateFormatValid(""));
@@ -310,31 +325,63 @@ secondMax([3, 4, 5, 6]) 		-> 5
 secondMax([10]) 		-> 10
 */
 
+const secondMax = (arr) => {
+    let result = [];
 
+    arr.forEach(i => {
+        if (!result.includes(i)) result.push(i);
+    })
+
+    result.sort((a, b) => b - a);
+
+    if (result.length === 1) return result[0];
+    else return result[1];
+}
+
+console.log(secondMax([7, 4, 4, 4, 23, 23, 23]));
+console.log(secondMax([3, 4, 5, 6]));
+console.log(secondMax([10]));
 
 /*
 TASK 12
 
 Requirement: 
-Write a method named secondMin() takes an array argument and returns the second min number from the array.
+Write a method named secondMin() takes an array argument and 
+returns the second min number from the array.
 
 NOTE: Assume that you will not be given empty array and if the array has only 1 element, it will be returned as second min number.
 
 NOTE: Be careful when there is multiple min numbers.
 
 Examples:
-secondMax([7, 4, 4, 4, 23, 23, 23]) 	-> 7
-secondMax([3, 4, 5, 6]) 		-> 4
-secondMax([10]) 		-> 10
+secondMin([7, 4, 4, 4, 23, 23, 23]) 	-> 7
+secondMin([3, 4, 5, 6]) 		-> 4
+secondMin([10]) 		-> 10
 */
 
+const secondMin = (arr) => {
+    let result = [];
 
+    arr.forEach(i => {
+        if (!result.includes(i)) result.push(i);
+    })
+
+    result.sort((a, b) => a - b);
+
+    if (result.length === 1) return result[0];
+    else return result[1];
+}
+
+console.log(secondMin([7, 4, 4, 4, 23, 23, 23]));
+console.log(secondMin([3, 4, 5, 6]));
+console.log(secondMin([10]));
 
 /*
 TASK 13
 
 Requirement: 
-Write a method named mostRepeated() takes an array argument and returns the most counted element from the array.
+Write a method named mostRepeated() takes an array argument and 
+returns the most counted element from the array.
 
 NOTE: Assume that you will not be given empty array and the count of one element will always be more than the others.
 
@@ -345,5 +392,11 @@ mostRepeated([10]) 					-> 10
 mostRepeated(["TechGlobal"]) 				-> "TechGlobal"
 */
 
+const mostRepeated = (arr) => {
+    let newArr = [];
 
+    arr.forEach(i => {
+        if (arr.includes(i))
+    })
+}
 
